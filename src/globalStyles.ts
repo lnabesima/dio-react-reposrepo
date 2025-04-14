@@ -23,9 +23,16 @@ export const GlobalStyle = createGlobalStyle`
         color: var(--gh-text);
         font-family: "Segoe UI", "Arial", "Helvetica", sans-serif;
         padding: 0.625rem;
+
+        height: 100dvh;
+    }
+    
+    body div{
+        height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100dvh;
+        gap: 0.625rem;
     }
 `

@@ -9,5 +9,5 @@ export interface FormProps {
 
   buttonLabel: string;
   buttonType?: string;
-  buttonOnClick: () => void;
+  buttonOnClick: (e: MouseEvent<HTMLButtonElement>) => void;
 }

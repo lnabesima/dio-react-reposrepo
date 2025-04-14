@@ -1,22 +1,25 @@
 import GithubLogo from './assets/github.svg';
 import { FormContainer } from './components/FormContainer';
 import { FormProps } from './@types/FormContainer';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, MouseEvent, useState } from 'react';
 
 export default function App() {
-  const [inputValue, inputOnChange] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement> | MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log("Form Submitted");
+    try {
+      console.log("Form Submitted");
+
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setInputValue("");
+    }
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-  };
-
-  const handleButtonClick = () => {
-    console.log("Button Clicked!");
+    setInputValue(e.target.value);
   };
 
   const formProps: FormProps = {
@@ -24,14 +27,13 @@ export default function App() {
     inputValue: inputValue,
     inputOnChange: handleInputChange,
     buttonLabel: "Buscar",
-    buttonOnClick: handleButtonClick
+    buttonOnClick: handleSubmit
   };
 
   return (
     <>
       <img src={GithubLogo} alt="Github Logo"/>
       <FormContainer formProps={formProps}/>
-      aaa
     </>
   );
 }
