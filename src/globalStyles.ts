@@ -8,7 +8,9 @@ export const GlobalStyle = createGlobalStyle`
         --gh-text-faded: #9198a1;
         --gh-card: #212830;
         --gh-accent: #262c36;
-        --gh-green: #3b8640;
+        --gh-green: #2a883b;
+        --gh-green-hover: #3b8640;
+        --gh-green-active: #428f46;
         --gh-star: #daaa3f;
     }
 
