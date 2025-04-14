@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
     cursor: pointer;
     box-shadow: rgba(28, 33, 40, 0.6) 0 1px 1px 0, rgba(28, 33, 40, 0.6) 0 1px 3px 0;
     min-width: 100px;
-    
+    transition: background-color 0.2s ease-in-out;
 
     &:hover {
         background-color: var(--gh-green-hover);
@@ -18,5 +18,10 @@ export const StyledButton = styled.button`
 
     &:active {
         background-color: var(--gh-green-active);
+    }
+    
+    &:disabled{
+        cursor: not-allowed;
+        background-color: gray;
     }
 `

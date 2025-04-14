@@ -5,7 +5,6 @@ import { Button } from '../Button';
 
 interface FormContainerProps {
   formProps: FormProps;
-
 }
 
 export function FormContainer({ formProps }: FormContainerProps) {
@@ -17,6 +16,6 @@ export function FormContainer({ formProps }: FormContainerProps) {
       value={formProps.inputValue}
       onChange={formProps.inputOnChange}
     />
-    <Button type={'button'} disabled={!formProps.inputValue} label={"Buscar"} />
+    <Button type={'button'} disabled={!formProps.inputValue} label={"Buscar"} onClick={formProps.buttonOnClick}/>
   </StyledFormContainer>;
 }
