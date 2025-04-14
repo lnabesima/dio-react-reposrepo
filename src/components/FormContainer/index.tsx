@@ -16,6 +16,6 @@ export function FormContainer({ formProps }: FormContainerProps) {
       value={formProps.inputValue}
       onChange={formProps.inputOnChange}
     />
-    <Button type={'button'} disabled={!formProps.inputValue} label={"Buscar"} onClick={formProps.buttonOnClick}/>
+    <Button type={'button'} disabled={!formProps.inputValid} label={"Buscar"} onClick={formProps.buttonOnClick}/>
   </StyledFormContainer>;
 }
