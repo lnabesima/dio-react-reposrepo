@@ -5,6 +5,7 @@ export interface FormProps {
   inputName?: string,
   inputPlaceholder?: string,
   inputValue: string,
+  inputValid: boolean,
   inputOnChange: (e: ChangeEvent<HTMLInputElement>) => void;
 
   buttonLabel: string;

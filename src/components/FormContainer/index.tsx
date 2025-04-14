@@ -1,10 +1,10 @@
 import { InputComponent } from '../Input';
 import { StyledFormContainer } from './styles.ts';
 import { FormProps } from '../../@types/FormContainer';
+import { Button } from '../Button';
 
 interface FormContainerProps {
   formProps: FormProps;
-
 }
 
 export function FormContainer({ formProps }: FormContainerProps) {
@@ -16,6 +16,6 @@ export function FormContainer({ formProps }: FormContainerProps) {
       value={formProps.inputValue}
       onChange={formProps.inputOnChange}
     />
-    <button type={'button'} disabled={!formProps.inputValue}>Buscar</button>
+    <Button type={'button'} disabled={!formProps.inputValid} label={"Buscar"} onClick={formProps.buttonOnClick}/>
   </StyledFormContainer>;
 }
