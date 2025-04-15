@@ -6,6 +6,8 @@ export interface Repository {
   description: string;
   private: boolean
   language: string;
-
-
+  name: string
+  owner: string
+  owner_avatar_url: string
+  forks_count: number
 }

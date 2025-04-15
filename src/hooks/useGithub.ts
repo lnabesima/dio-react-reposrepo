@@ -4,7 +4,7 @@ import { getRepoDetails } from '../services/githubService.ts';
 
 export function useGithub() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
   const [repository, setRepository] = useState<Repository | null>(null);
 
   const fetchRepository = async (fullName: string): Promise<void> => {
