@@ -4,6 +4,7 @@ import { FormProps } from './@types/FormContainer';
 import { ChangeEvent, FormEvent, MouseEvent, useEffect, useState } from 'react';
 import { useGithub } from './hooks/useGithub.ts';
 import { z } from 'zod';
+import { RepoCard } from './components/RepoCard';
 
 const inputNameSchema = z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9-._$]/);
 
@@ -43,9 +44,15 @@ export default function App() {
   }, [inputValue])
 
   return (
-    <>
+    <main>
       <img src={GithubLogo} alt="Github Logo"/>
       <FormContainer formProps={formProps}/>
-    </>
+
+      {loading && <p>Loading...</p>}
+
+      {repository && <RepoCard props={repository}/>}
+
+      {error && <p>O repositório não foi encontrado. ☹️</p>}
+    </main>
   );
 }
