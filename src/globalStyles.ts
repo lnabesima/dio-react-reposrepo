@@ -25,11 +25,9 @@ export const GlobalStyle = createGlobalStyle`
         color: var(--gh-text);
         font-family: "Segoe UI", "Arial", "Helvetica", sans-serif;
         padding: 0.625rem;
-
-        height: 100dvh;
     }
     
-    body div{
+    main{
         height: 100%;
         width: 100%;
         display: flex;
