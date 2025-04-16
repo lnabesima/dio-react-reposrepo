@@ -8,6 +8,7 @@ import {
   StyledRepoCardTitleContainer
 } from './styles.ts';
 import { Repository } from '../../@types/Repository';
+import { Button } from '../Button';
 
 interface RepoCardProps {
   props: Repository;
@@ -48,7 +49,7 @@ export const RepoCard = ({ props }: RepoCardProps) => {
     </StyledRepoCardLanguageContainer>
 
     <StyledRepoCardButtonContainer>
-      <button>Adicionar ao repositório</button>
+      <Button label={"Adicionar ao repositório"} onClick={() => console.log("click!")}/>
     </StyledRepoCardButtonContainer>
   </StyledRepoCardContainer>;
 };
