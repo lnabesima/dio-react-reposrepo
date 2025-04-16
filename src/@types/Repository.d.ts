@@ -10,4 +10,5 @@ export interface Repository {
   owner: string
   owner_avatar_url: string
   forks_count: number
+  updated_at: string
 }

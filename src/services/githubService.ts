@@ -19,6 +19,7 @@ export async function getRepoDetails(repoFullName: string) {
     watchers_count: responseJson.watchers_count,
     private: responseJson.private,
     language: responseJson.language,
-    forks_count:responseJson.forks_count
+    forks_count:responseJson.forks_count,
+    updated_at: responseJson.updated_at
   }
 }

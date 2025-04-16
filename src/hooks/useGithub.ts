@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Repository } from '../@types/Repository';
 import { getRepoDetails } from '../services/githubService.ts';
 
@@ -23,10 +23,10 @@ export function useGithub() {
     }
   };
 
-  useEffect(() => {
-      console.log(repository);
-    },
-    [repository]);
+  // useEffect(() => {
+  //     console.log(repository);
+  //   },
+  //   [repository]);
 
   return {
     repository,

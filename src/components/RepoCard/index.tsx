@@ -10,13 +10,20 @@ import {
 import { Repository } from '../../@types/Repository';
 
 interface RepoCardProps {
-  props: Repository | null;
+  props: Repository;
 }
 
 export const RepoCard = ({ props }: RepoCardProps) => {
-  console.log(props);
+  const { updated_at } = props;
+  const formattedDate = new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    timeZone: 'UTC'
+  }).format(new Date(updated_at));
+
   return <StyledRepoCardContainer>
-    
+
     <StyledRepoCardTitleContainer>
       <p>{props?.owner}/<StyledRepoCardRepoHighlight>{props?.name}</StyledRepoCardRepoHighlight></p>
     </StyledRepoCardTitleContainer>
@@ -37,7 +44,7 @@ export const RepoCard = ({ props }: RepoCardProps) => {
       <p>{props?.description ?? ""}</p>
     </StyledRepoCardDescriptionContainer>
 
-    <StyledRepoCardLanguageContainer><p>Language: {props?.language ?? ""}</p>
+    <StyledRepoCardLanguageContainer><p>Atualizado em: {formattedDate ?? ""}</p>
     </StyledRepoCardLanguageContainer>
 
     <StyledRepoCardButtonContainer>
