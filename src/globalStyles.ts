@@ -12,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
         --gh-green-hover: #3b8640;
         --gh-green-active: #428f46;
         --gh-star: #daaa3f;
+        --gh-danger-red-text: #e5534b;
+        --gh-danger-red-button-hover: #ad2e2c;
+        --gh-danger-red-button-active: #c33d38;
+        --gh-danger-gray-button: #2f3742;
+        --gh-danger-gray-text: #cdd9e5;
     }
 
     *, body {
