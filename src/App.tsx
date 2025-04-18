@@ -1,4 +1,3 @@
-import GithubLogo from './assets/github.svg';
 import { FormContainer } from './components/FormContainer';
 import { FormProps } from './@types/FormContainer';
 import { ChangeEvent, FormEvent, MouseEvent, useEffect, useState } from 'react';
@@ -7,6 +6,7 @@ import { z } from 'zod';
 import { RepoCard } from './components/RepoCard';
 import { Repository } from './@types/Repository';
 import { RepoList } from './components/RepoList';
+import { Header } from './components/Header';
 
 const inputNameSchema = z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9-._$]/);
 
@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     <main>
-      <img src={GithubLogo} alt="Github Logo"/>
+      <Header />
       <FormContainer formProps={formProps}/>
 
       {loading && <p>Loading...</p>}

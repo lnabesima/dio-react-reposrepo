@@ -12,6 +12,10 @@ export const RepoList = ({ repos, onClick }: RepoListProps): JSX.Element => {
 
   return (
     <StyledRepoListContainer>
+      <h2>
+        Lista de Repositórios
+      </h2>
+
       {repos.map(repo =>
         <RepoCard onClick={(repo:Repository) => onClick(repo)} repo={repo} key={repo.id} buttonVariant={"danger"} label={"Remover da lista"}/>
       )}
