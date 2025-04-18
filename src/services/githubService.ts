@@ -9,6 +9,7 @@ export async function getRepoDetails(repoFullName: string) {
 
   const responseJson = await response.json()
   return {
+    id: responseJson.id,
     description: responseJson.description,
     name: responseJson.name,
     owner: responseJson.owner.login,

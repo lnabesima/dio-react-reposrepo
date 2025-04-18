@@ -1,4 +1,5 @@
 export interface Repository {
+  id: number;
   full_name:string;
   stargazers_count: number
   watchers_count: number;

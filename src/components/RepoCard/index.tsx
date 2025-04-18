@@ -11,11 +11,14 @@ import { Repository } from '../../@types/Repository';
 import { Button } from '../Button';
 
 interface RepoCardProps {
-  props: Repository;
+  repo: Repository;
+  onClick: (() => void) | ((repo:Repository) => void);
+  label?: string | undefined;
+  buttonVariant?: 'default' | 'danger';
 }
 
-export const RepoCard = ({ props }: RepoCardProps) => {
-  const { updated_at } = props;
+export const RepoCard = ({ repo, onClick, label = "Adicionar à lista", buttonVariant = 'default' }: RepoCardProps) => {
+  const { updated_at } = repo;
   const formattedDate = new Intl.DateTimeFormat('pt-BR', {
     day: '2-digit',
     month: '2-digit',
@@ -23,33 +26,39 @@ export const RepoCard = ({ props }: RepoCardProps) => {
     timeZone: 'UTC'
   }).format(new Date(updated_at));
 
+  const handleButtonClick = () => {
+    if(typeof onClick === 'function') {
+      onClick(repo);
+    }
+  }
+
   return <StyledRepoCardContainer>
 
     <StyledRepoCardTitleContainer>
-      <p>{props?.owner}/<StyledRepoCardRepoHighlight>{props?.name}</StyledRepoCardRepoHighlight></p>
+      <p>{repo?.owner}/<StyledRepoCardRepoHighlight>{repo?.name}</StyledRepoCardRepoHighlight></p>
     </StyledRepoCardTitleContainer>
 
     <StyledRepoCardNumbersContainer>
       <p>
-        <StyledRepoCardRepoHighlight>{props?.stargazers_count ?? 0}</StyledRepoCardRepoHighlight> stars
+        <StyledRepoCardRepoHighlight>{repo?.stargazers_count ?? 0}</StyledRepoCardRepoHighlight> stars
       </p>
       <p>
-        <StyledRepoCardRepoHighlight>{props?.watchers_count ?? 0}</StyledRepoCardRepoHighlight> watchers
+        <StyledRepoCardRepoHighlight>{repo?.watchers_count ?? 0}</StyledRepoCardRepoHighlight> watchers
       </p>
-      <p><StyledRepoCardRepoHighlight>{props?.forks_count ?? 0}</StyledRepoCardRepoHighlight> forks
+      <p><StyledRepoCardRepoHighlight>{repo?.forks_count ?? 0}</StyledRepoCardRepoHighlight> forks
       </p>
     </StyledRepoCardNumbersContainer>
 
 
     <StyledRepoCardDescriptionContainer>
-      <p>{props?.description ?? ""}</p>
+      <p>{repo?.description ?? ""}</p>
     </StyledRepoCardDescriptionContainer>
 
     <StyledRepoCardLanguageContainer><p>Atualizado em: {formattedDate ?? ""}</p>
     </StyledRepoCardLanguageContainer>
 
     <StyledRepoCardButtonContainer>
-      <Button label={"Adicionar ao repositório"} onClick={() => console.log("click!")}/>
+      <Button variant={buttonVariant} label={label} onClick={handleButtonClick}/>
     </StyledRepoCardButtonContainer>
   </StyledRepoCardContainer>;
 };
