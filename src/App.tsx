@@ -71,7 +71,8 @@ export default function App() {
       {error && <p>O repositório não foi encontrado. ☹️</p>}
 
       <hr/>
-      <RepoList repos={repos} onClick={(repo) => handleRemoveRepoFromList(repo)}/>
+
+      {repos.length !== 0 && <RepoList repos={repos} onClick={(repo) => handleRemoveRepoFromList(repo)}/>}
 
     </main>
   );

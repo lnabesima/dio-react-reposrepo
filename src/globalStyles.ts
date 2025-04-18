@@ -29,11 +29,10 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--bg-color);
         color: var(--gh-text);
         font-family: "Segoe UI", "Arial", "Helvetica", sans-serif;
-        padding: 0.625rem;
     }
     
     main{
-        height: 100%;
+        height: 100dvh;
         width: 100%;
         display: flex;
         flex-direction: column;
