@@ -1,0 +1,16 @@
+:root {
+    --bg-color: #151b23;
+    --gh-blue: #316dca;
+    --gh-text: #d1d7e0;
+    --gh-text-faded: #9198a1;
+    --gh-card: #212830;
+    --gh-accent: #262c36;
+    --gh-green: #2a883b;
+    --gh-green-hover: #3b8640;
+    --gh-green-active: #428f46;
+    --gh-star: #daaa3f;
+    --gh-danger-red-text: #e5534b;
+    --gh-danger-red-button: #ad2e2c;
+    --gh-danger-gray-button: #2f3742;
+    --gh-danger-gray-text: #cdd9e5;
+}
